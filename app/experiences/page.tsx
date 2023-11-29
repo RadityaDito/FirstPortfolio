@@ -3,6 +3,7 @@ import Me from "@/public/IMG_1312.jpg";
 import CareerCard from "../components/CareerCard";
 import { HiOutlineBriefcase as CareerIcon } from "react-icons/hi";
 import SkillList from "../components/SkillList";
+import { CAREERS } from "@/constants";
 // interface Data {
 //   title: string;
 //   overview: string;
@@ -10,48 +11,6 @@ import SkillList from "../components/SkillList";
 //   _id: string;
 //   imageUrl: string;
 // }
-
-export const CAREERS = [
-  {
-    position: "Backend Developer",
-    company: "Badan Riset dan Inovasi Nasional",
-    logo: "https://res.cloudinary.com/dbnjhiqka/image/upload/c_scale,h_2000,w_2000/v1701272974/Personal%20Portfolio/qxokf6dv9udlajhehwqg.png",
-    location_type: "On Site",
-    type: "Seasonal",
-    start_date: "2023-10",
-    end_date: "2024-01",
-    link: "https://brin.go.id/",
-  },
-  {
-    position: "Labolatory Assistant",
-    company: "Network Laboratory DTE FTUI ",
-    logo: "https://res.cloudinary.com/dbnjhiqka/image/upload/c_scale,h_2000,w_2000/v1701277264/Personal%20Portfolio/ljrsziaqkiwmekc4b7y1.png",
-    location: "Depok",
-    location_type: "On Site",
-    type: "Seasonal",
-    start_date: "2023-07",
-    link: "https://www.linkedin.com/in/netlab-dte-ftui-849307199/?trk=public_profile_browsemap&originalSubdomain=id",
-  },
-  {
-    position: "Lead Software Engineer",
-    company: "Exercise FTUI",
-    location: "Depok",
-    location_type: "On Site",
-    type: "Seasonal",
-    start_date: "2023-02",
-    link: "https://www.exerciseftui.com/",
-  },
-  {
-    position: "Software Engineer",
-    company: "Exercise FTUI",
-    location: "Depok",
-    location_type: "On Site",
-    type: "Seasonal",
-    start_date: "2022-02",
-    end_date: "2023-02",
-    link: "https://www.exerciseftui.com/",
-  },
-];
 
 // async function getProjects() {
 //   const query = `*[_type == "project"] {
