@@ -34,7 +34,7 @@ const Image = (props: ImageProps) => {
         alt={alt}
         loading="lazy"
         quality={100}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
         {...rest}
       />
     </div>

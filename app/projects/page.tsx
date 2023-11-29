@@ -9,30 +9,8 @@ import Nextthreads from "@/public/images/projects/nextthreads.png";
 import Remindapp from "@/public/images/projects/remindapp.png";
 import { useTheme } from "next-themes";
 import next from "next";
-
-interface Data {
-  title: string;
-  overview: string;
-  link: string;
-  _id: string;
-  imageUrl: string;
-}
-
-// async function getProjects() {
-//   const query = `*[_type == "project"] {
-//     title,
-//       overview,
-//       link,
-//       _id,
-//       "imageUrl": image.asset->url
-//   }`;
-
-//   const data = await client.fetch(query);
-
-//   return data;
-// }
-
-// export const revalidate = 60;
+import CareerCard from "../components/CareerCard";
+import ProjectCard from "../components/ProjectCard";
 
 const projects = [
   {
@@ -82,181 +60,43 @@ export default async function Projects() {
       </div>
 
       <div className="grid gap-y-8 sm:gap-6  sm:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-10 pt-8">
-        {projects.map((project) => (
-          <article className="overflow-hidden dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-gray-700 shadow-teal-100">
-            <div className="h-56 w-full relative">
-              <Image
-                fill
-                src={project.imageUrl}
-                alt="Image of the project"
-                className="w-full h-full object-cover"
-              />
-            </div>
+        {projects.map((project, index) => (
+          // <article className="overflow-hidden dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-gray-700 shadow-teal-100">
+          //   <div className="h-56 w-full relative">
+          //     <Image
+          //       fill
+          //       src={project.imageUrl}
+          //       alt="Image of the project"
+          //       className="w-full h-full object-cover"
+          //     />
+          //   </div>
 
-            <div className="p-4 sm:p-6">
-              <a href={""} target="_blank">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                  {project.title}
-                </h3>
-              </a>
+          //   <div className="p-4 sm:p-6">
+          //     <a href={""} target="_blank">
+          //       <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+          //         {project.title}
+          //       </h3>
+          //     </a>
 
-              <p className=" line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-                {project.overview}
-              </p>
+          //     <p className=" line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+          //       {project.overview}
+          //     </p>
 
-              <a
-                href={""}
-                target="_blank"
-                className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500"
-              >
-                Learn More!
-                <span className="block transition-all group-hover:ms-0.5">
-                  &rarr;
-                </span>
-              </a>
-            </div>
-          </article>
+          //     <a
+          //       href={"#"}
+          //       onClick={() => alert("Coming soon!")}
+          //       // target="_blank"
+          //       className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500"
+          //     >
+          //       Learn More!
+          //       <span className="block transition-all group-hover:ms-0.5">
+          //         &rarr;
+          //       </span>
+          //     </a>
+          //   </div>
+          // </article>
+          <ProjectCard key={index} {...project} />
         ))}
-        {/* <article className="overflow-hidden  dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-gray-700 shadow-teal-100">
-          <div className="h-56 w-full relative">
-            <Image
-              fill
-              src={WebImage}
-              alt="Image of the project"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="p-4 sm:p-6">
-            <a href={""} target="_blank">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                Project Title
-              </h3>
-            </a>
-
-            <p className=" line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              doloribus magnam cumque rem voluptatem eum beatae provident
-              placeat officiis corporis.
-            </p>
-
-            <a
-              href={""}
-              target="_blank"
-              className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500"
-            >
-              Learn More!
-              <span className="block transition-all group-hover:ms-0.5">
-                &rarr;
-              </span>
-            </a>
-          </div>
-        </article>
-        <article className="overflow-hidden dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-gray-700 shadow-teal-100">
-          <div className="h-56 w-full relative">
-            <Image
-              fill
-              src={WebImage2}
-              alt="Image of the project"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="p-4 sm:p-6">
-            <a href={""} target="_blank">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                Project Title
-              </h3>
-            </a>
-
-            <p className=" line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              doloribus magnam cumque rem voluptatem eum beatae provident
-              placeat officiis corporis.
-            </p>
-
-            <a
-              href={""}
-              target="_blank"
-              className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500"
-            >
-              Learn More!
-              <span className="block transition-all group-hover:ms-0.5">
-                &rarr;
-              </span>
-            </a>
-          </div>
-        </article>
-        <article className="overflow-hidden dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-gray-700 shadow-teal-100">
-          <div className="h-56 w-full relative">
-            <Image
-              fill
-              src={DefaultImage}
-              alt="Image of the project"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="p-4 sm:p-6">
-            <a href={""} target="_blank">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                Project Title
-              </h3>
-            </a>
-
-            <p className=" line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              doloribus magnam cumque rem voluptatem eum beatae provident
-              placeat officiis corporis.
-            </p>
-
-            <a
-              href={""}
-              target="_blank"
-              className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500"
-            >
-              Learn More!
-              <span className="block transition-all group-hover:ms-0.5">
-                &rarr;
-              </span>
-            </a>
-          </div>
-        </article>
-        <article className="overflow-hidden  dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-gray-700 shadow-teal-100">
-          <div className="h-56 w-full relative">
-            <Image
-              fill
-              src={Nextchat}
-              alt="Image of the project"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="p-4 sm:p-6">
-            <a href={""} target="_blank">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white">
-                Project Title
-              </h3>
-            </a>
-
-            <p className=" line-clamp-3 mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              doloribus magnam cumque rem voluptatem eum beatae provident
-              placeat officiis corporis.
-            </p>
-
-            <a
-              href={""}
-              target="_blank"
-              className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500"
-            >
-              Learn More!
-              <span className="block transition-all group-hover:ms-0.5">
-                &rarr;
-              </span>
-            </a>
-          </div>
-        </article> */}
       </div>
     </div>
   );

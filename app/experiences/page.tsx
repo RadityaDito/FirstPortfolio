@@ -25,6 +25,7 @@ export const CAREERS = [
   {
     position: "Labolatory Assistant",
     company: "Network Laboratory DTE FTUI ",
+    logo: "https://res.cloudinary.com/dbnjhiqka/image/upload/c_scale,h_2000,w_2000/v1701277264/Personal%20Portfolio/ljrsziaqkiwmekc4b7y1.png",
     location: "Depok",
     location_type: "On Site",
     type: "Seasonal",
