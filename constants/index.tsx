@@ -1,5 +1,15 @@
 export const CAREERS = [
   {
+    position: "Mobile Engineer Android",
+    company: "Traveloka",
+    logo: "https://res.cloudinary.com/dbnjhiqka/image/upload/f_auto,q_auto/v1/Personal%20Portfolio/troxioniwxmt9tczpvod",
+    location_type: "On Site",
+    type: "Seasonal",
+    start_date: "2024-02",
+    end_date: "2024-06",
+    link: "https://www.traveloka.com/id-id",
+  },
+  {
     position: "Backend Developer",
     company: "Badan Riset dan Inovasi Nasional",
     logo: "https://res.cloudinary.com/dbnjhiqka/image/upload/c_scale,h_2000,w_2000/v1701272974/Personal%20Portfolio/qxokf6dv9udlajhehwqg.png",
@@ -26,6 +36,7 @@ export const CAREERS = [
     location_type: "On Site",
     type: "Seasonal",
     start_date: "2023-02",
+    end_date: "2023-04",
     link: "https://www.exerciseftui.com/",
   },
   {

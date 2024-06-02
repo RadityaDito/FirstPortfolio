@@ -15,8 +15,7 @@ import ProjectCard from "../components/ProjectCard";
 const projects = [
   {
     title: "Personal Website V1",
-    overview:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloribus magnam cumque rem voluptatem eum beatae provident placeat officiis corporis.",
+    overview: "Personal Portfolio that showcase my experiences and projects",
     link: "https://google.com",
     _id: "4",
     imageUrl: WebImageV1,
