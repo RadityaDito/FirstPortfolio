@@ -36,7 +36,7 @@ export const CAREERS = [
     location_type: "On Site",
     type: "Seasonal",
     start_date: "2023-02",
-    end_date: "2023-04",
+    end_date: "2024-02",
     link: "https://www.exerciseftui.com/",
   },
   {
